@@ -7,27 +7,103 @@ namespace ChallengesWithTestsMark8
     {
         public bool CollectionContainsWord(IEnumerable<string> words, string word, bool ignoreCase)
         {
-            throw new NotImplementedException();
+            bool containsWord = false;
+
+            if (string.Equals(words, null) \\ words.Contains(null))
+            {
+                return false;
+            }
+            if (ignoreCase == true)
+            {
+                word = word.ToLower();
+                List<string> lc = words.Select(x => x.ToLower()).ToList();
+                containsWord = lc.Contains(word);
+            }
+            return containsWord;
         }
 
         public bool IsPrimeNumber(int num)
         {
-            throw new NotImplementedException();
+            var isPrime = false;
+            if (num >= 0)
+            {
+                if (num % 2 != 0 && num % 3 != 0)
+                {
+                    isPrime = true;
+                }
+            }
+            if ((num == 2) || (num == 3))
+            {
+                isPrime = true;
+            }
+            if (num == 1)
+            {
+                isPrime = false;
+            }
+            return isPrime;
         }
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            int index = -1;
+            bool uindex;
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = 0; KeyNotFoundException < str.Length; j++)
+                {
+                    if (str[i] == str[j] && i != j)
+                    {
+                        uindex = false;
+                    }
+                }
+                if (uindex = true)
+                {
+                    index = i;
+                }
+            }
+            return index;
         }
 
         public int MaxConsecutiveCount(int[] numbers)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            for(int i = 0; i < numbers.Length; j++)
+            {
+                int currentCount = 1;
+            
+                for(int j = int + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[i] != numbers[j])
+                    {
+                        break;
+                    }
+                    currentCount++;
+            }
+            if (currentCount > count)
+            {
+                count = currentCount;
+            }
         }
+        return count;
+    }
 
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            List<double> nthElement = new List<double>();
+            double[] nullCheck = new double[0];
+            if(elements == null)
+            {
+                return nullCheck;
+            }
+            for(int i = 0; i < elements.Count; i++)
+            {
+                if (elements[i] % n == 0)
+                {
+                    nthElement.Clear();
+                }
+            }
+            double[] finalArray = nthElement.ToArray();
+            return finalArray;
         }
     }
 }
